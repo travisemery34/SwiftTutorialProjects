@@ -14,6 +14,7 @@
 		385B1A631B8BF0D100EB827F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 385B1A621B8BF0D100EB827F /* Images.xcassets */; };
 		385B1A661B8BF0D100EB827F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 385B1A641B8BF0D100EB827F /* LaunchScreen.xib */; };
 		385B1A721B8BF0D100EB827F /* TestingSeguesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385B1A711B8BF0D100EB827F /* TestingSeguesTests.swift */; };
+		385B1A7C1B8BF15B00EB827F /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385B1A7B1B8BF15B00EB827F /* SecondView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		385B1A6B1B8BF0D100EB827F /* TestingSeguesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestingSeguesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		385B1A701B8BF0D100EB827F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		385B1A711B8BF0D100EB827F /* TestingSeguesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingSeguesTests.swift; sourceTree = "<group>"; };
+		385B1A7B1B8BF15B00EB827F /* SecondView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			children = (
 				385B1A581B8BF0D100EB827F /* AppDelegate.swift */,
 				385B1A5D1B8BF0D100EB827F /* ViewController.swift */,
+				385B1A7B1B8BF15B00EB827F /* SecondView.swift */,
 				385B1A5F1B8BF0D100EB827F /* Main.storyboard */,
 				385B1A621B8BF0D100EB827F /* Images.xcassets */,
 				385B1A641B8BF0D100EB827F /* LaunchScreen.xib */,
@@ -217,6 +220,7 @@
 			files = (
 				385B1A5E1B8BF0D100EB827F /* ViewController.swift in Sources */,
 				385B1A5C1B8BF0D100EB827F /* TestingSegues.xcdatamodeld in Sources */,
+				385B1A7C1B8BF15B00EB827F /* SecondView.swift in Sources */,
 				385B1A591B8BF0D100EB827F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

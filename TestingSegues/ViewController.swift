@@ -8,18 +8,27 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,SecondViewDelegate {
 
+    @IBOutlet weak var one: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func myVCDidFinish(controller: SecondView, text: String) {
+        one.text = "The Color is " +  text
+        controller.navigationController?.popViewControllerAnimated(true)
     }
-
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "mySegue"{
+            let vc = segue.destinationViewController as! SecondView
+            vc.colorString = one.text!
+            vc.delegate = self
+        }
+    }
 
 }
 

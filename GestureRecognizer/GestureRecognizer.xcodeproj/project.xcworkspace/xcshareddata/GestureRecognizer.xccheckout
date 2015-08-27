@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>344C92E8-75AC-41D9-B78B-4F3A626D6055</string>
+	<key>IDESourceControlProjectName</key>
+	<string>project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C34B2C3E50F3CB550FFDCE385DE8B3736B335A35</key>
+		<string>https://github.com/travisemery34/TestingSegues.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>GestureRecognizer/GestureRecognizer.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C34B2C3E50F3CB550FFDCE385DE8B3736B335A35</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/travisemery34/TestingSegues.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C34B2C3E50F3CB550FFDCE385DE8B3736B335A35</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C34B2C3E50F3CB550FFDCE385DE8B3736B335A35</string>
+			<key>IDESourceControlWCCName</key>
+			<string>TestingSegues</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -19,19 +19,29 @@ class ShapeView: UIView{
     
     //Added Methods
     init(origin: CGPoint) {
+        
+        //Build the square
         super.init(frame: CGRectMake(0.0, 0.0, size, size))
         self.center = origin
         self.backgroundColor = UIColor.clearColor()//This removes the black corners on the squares
         
+        //Init the gestures defined in this method
         initGestureRecognizers()
     }
     
     /*
-        Gesture for panning with user's finger
+        Gesture Recognition
     */
     func initGestureRecognizers() {
+        
+        //Panning Gesture
         let panGR = UIPanGestureRecognizer(target: self, action: "didPan:")
         addGestureRecognizer(panGR)
+        
+        //Pinching gesture
+        let pinchGR = UIPinchGestureRecognizer(target: self, action: "didPinch:")
+        addGestureRecognizer(pinchGR)
+        
     }
     
     /*
@@ -47,6 +57,17 @@ class ShapeView: UIView{
         self.center.y += translation.y
         
         panGR.setTranslation(CGPointZero, inView: self)
+    }
+    
+    func didPinch(pinchGR: UIPinchGestureRecognizer) {
+        
+        self.superview!.bringSubviewToFront(self)
+        
+        let scale = pinchGR.scale
+        
+        self.transform = CGAffineTransformScale(self.transform, scale, scale)
+        
+        pinchGR.scale = 1.0
     }
     
     // We need to implement init(coder) to avoid compilation errors

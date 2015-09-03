@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    var names = [String]()
+    var names = [NSManagedObject]()
     
     @IBAction func addName(sender: AnyObject) {
     
@@ -23,7 +24,7 @@ class ViewController: UIViewController, UITableViewDataSource {
             style: .Default) { (action: UIAlertAction!) -> Void in
                 
                 let textField = alert.textFields![0] as! UITextField
-                self.names.append(textField.text)
+                self.saveName(textField.text)
                 self.tableView.reloadData()
         }
         
@@ -43,6 +44,34 @@ class ViewController: UIViewController, UITableViewDataSource {
             completion: nil)
         
     }
+    
+    func saveName(name: String) {
+        //1
+        let appDelegate =
+        UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext!
+        
+        //2
+        let entity =  NSEntityDescription.entityForName("Person",
+            inManagedObjectContext:
+            managedContext)
+        
+        let person = NSManagedObject(entity: entity!,
+            insertIntoManagedObjectContext:managedContext)
+        
+        //3
+        person.setValue(name, forKey: "name")
+        
+        //4
+        var error: NSError?
+        if !managedContext.save(&error) {
+            println("Could not save \(error), \(error?.userInfo)")
+        }  
+        //5
+        names.append(person)
+    }
+    
     // MARK: UITableViewDataSource
     func tableView(tableView: UITableView,
         numberOfRowsInSection section: Int) -> Int {
@@ -57,16 +86,44 @@ class ViewController: UIViewController, UITableViewDataSource {
             tableView.dequeueReusableCellWithIdentifier("Cell")
                 as! UITableViewCell
             
-            cell.textLabel!.text = names[indexPath.row]
+            let person = names[indexPath.row]
+            cell.textLabel!.text = person.valueForKey("name") as? String
             
             return cell
     }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "\"The List of Names\""
         tableView.registerClass(UITableViewCell.self,
             forCellReuseIdentifier: "Cell")
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        //1
+        let appDelegate =
+        UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext!
+        
+        //2
+        let fetchRequest = NSFetchRequest(entityName:"Person")
+        
+        //3
+        var error: NSError?
+        
+        let fetchedResults =
+        managedContext.executeFetchRequest(fetchRequest,
+            error: &error) as? [NSManagedObject]
+        
+        if let results = fetchedResults {
+            names = results
+        } else {
+            println("Could not fetch \(error), \(error!.userInfo)")
+        }
     }
 
     override func didReceiveMemoryWarning() {

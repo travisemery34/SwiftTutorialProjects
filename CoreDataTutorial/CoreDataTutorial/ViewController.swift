@@ -16,8 +16,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     @IBAction func addName(sender: AnyObject) {
     
-        var alert = UIAlertController(title: "New name",
-            message: "Add a new name",
+        var alert = UIAlertController(title: "New name", message: "Add a new name",
             preferredStyle: .Alert)
         
         let saveAction = UIAlertAction(title: "Save",
